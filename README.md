@@ -1,6 +1,6 @@
 # PUI homework
 
-Deployed website: `add the URL to your deployed website`
+Deployed website: `https://rinak01.github.io/rinak_solution_hw0/`
 
-Repository link: `add the URL to this repository`
+Repository link: `https://github.com/rinak01/rinak_solution_hw0/tree/main`
 
