@@ -3,6 +3,7 @@
     <img src="path/to/logo.svg" alt="Bun Bun Logo">
     <div class="line"></div>
   </div>
+
   <nav class="navigation">
     <ul>
       <li><a href="#">Home</a></li>
@@ -62,9 +63,14 @@
     display: block;
     margin: 0 auto;
   }
-  
+
   .product {
     text-align: center;
     font-size: 16px;
+  }
+  
+  .navigation a:hover {
+    color: #f5a623;
+    text-decoration: underline;
   }
   
