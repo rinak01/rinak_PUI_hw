@@ -49,9 +49,9 @@
 
   .product-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 400px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    width: 1200px;
     margin: 20px auto;
   }
   
@@ -59,12 +59,12 @@
     width: 285px;
     height: 285px;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
   
-  .product p {
+  .product {
     text-align: center;
     font-size: 16px;
-    margin-top: 10px;
   }
-  
   
