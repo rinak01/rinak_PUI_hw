@@ -32,6 +32,17 @@
     max-width: 100%;
 } */
   /* } */
+
+  #logo_bun_bun{
+    width: 70px;
+  }
+
+  img {
+    width: 150px; 
+    height: auto; 
+    max-width: 100%;
+}
+
   .line {
     flex-grow: 1;
     height: 1px;
