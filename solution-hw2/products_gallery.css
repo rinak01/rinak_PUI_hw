@@ -37,11 +37,11 @@
     width: 70px;
   }
 
-  img {
+  /* img {
     width: 150px; 
     height: auto; 
     max-width: 100%;
-}
+} */
 
   .line {
     flex-grow: 1;
