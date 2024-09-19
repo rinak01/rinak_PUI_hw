@@ -1,89 +1,66 @@
-/* <header class="header">
-  <div class="logo">
-    <img src="path/to/logo.svg" alt="Bun Bun Logo">
-    <div class="line"></div>
-  </div>
-
-  <nav class="navigation">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Cart</a></li>
-    </ul>
-  </nav>
-</header> */
-
+/* Header styling */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-    width: 1200px;
-    margin: 0 auto;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  /* .logo img {
-    width: 150px; 
-    height: auto; 
-    max-width: 100%;
-} */
-  /* } */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  width: 100%; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  #logo_bun_bun{
-    width: 170px;
-  }
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-  /* img {
-    width: 150px; 
-    height: auto; 
-    max-width: 100%;
-} */
+#logo_bun_bun {
+  width: 170px;
+}
 
-  .line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #ccc;
-  }
-  .navigation ul {
-    display: flex;
-    list-style-type: none;
-  }
-  .navigation ul li {
-    margin-left: 20px;
-  }
-  .navigation ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-  }
+.navigation ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .product-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    width: 1200px;
-    margin: 20px auto;
-  }
-  
-  .product img {
-    width: 285px;
-    height: 285px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-  }
+.navigation ul li {
+  margin-left: 20px;
+}
 
-  .product {
-    text-align: center;
-    font-size: 16px;
-  }
+.navigation ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
 
-  .navigation a:hover {
-    color: #f5a623;
-    text-decoration: underline;
-  }
-  
+.navigation a:hover {
+  color: #f5a623;
+  text-decoration: underline;
+}
+
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 20px auto;
+}
+
+.product img {
+  width: 100%; 
+  max-width: 285px; 
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.product {
+  text-align: center;
+  font-size: 16px;
+}
