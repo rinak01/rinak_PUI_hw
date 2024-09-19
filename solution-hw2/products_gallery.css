@@ -59,14 +59,13 @@
   color: black;
 }
 
-
 .top-bar {
-  border: none; 
-  height: 3px; 
-  background-color: black; /* The color of the bar */
-  width: 80%; 
-  margin: 0 auto; 
-  max-width: 1000px; 
+  height: 3px;
+  background-color: black;
+  width: 50%; 
+  position: absolute;
+  bottom: 0; 
+  right: 0; 
 }
 
 .product-gallery {
