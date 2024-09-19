@@ -19,24 +19,30 @@
   width: 170px;
 }
 
-.navigation ul {
+.navigation {
   display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 
-.navigation ul li {
-  margin-left: 20px;
+.navigation h3 {
+  margin-left: 20px; 
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
-.navigation ul li a {
+.navigation h3 a {
   text-decoration: none;
   font-weight: bold;
   color: black;
 }
 
-.navigation a:hover {
+.navigation h3 a.cart-link {
+  background-color: yellow;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.navigation h3 a:hover {
   color: #f5a623;
   text-decoration: underline;
 }
@@ -68,4 +74,5 @@ h3 {
   text-align: center;
   margin-top: 20px; 
   font-size: 24px;  
-  color: #333;   
+  color: #333;  
+}
