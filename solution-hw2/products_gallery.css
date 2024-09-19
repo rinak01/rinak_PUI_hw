@@ -68,6 +68,33 @@
   margin: 20px auto;
 }
 
+.product {
+  text-align: center;
+  font-size: 16px;
+}
+
+.product img {
+  width: 100%; 
+  max-width: 285px; 
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.product:hover {
+  border: 2px solid yellow; 
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 20px auto;
+}
+
 .product img {
   width: 100%; 
   max-width: 285px; 
