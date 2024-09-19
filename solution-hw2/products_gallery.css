@@ -59,6 +59,16 @@
   color: black;
 }
 
+
+.top-bar {
+  border: none; 
+  height: 3px; 
+  background-color: black; /* The color of the bar */
+  width: 80%; 
+  margin: 0 auto; 
+  max-width: 1000px; 
+}
+
 .product-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
