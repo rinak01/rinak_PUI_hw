@@ -1,4 +1,3 @@
-/* Header styling */
 .header {
   display: flex;
   justify-content: space-between;
@@ -41,14 +40,16 @@
   padding: 5px 10px;
   border-radius: 5px;
 }
-
-.navigation h3 a:hover {
-  background-color: yellow
-  padding: 5px 10px;
+.navigation h3 a.products-link {
+  background-color: yellow;
+  padding: 5px 10px; 
   border-radius: 5px; 
-  border: 2px solid black;
-  color: black;
-  font-weight: bold
+  font-weight: bold;
+}
+
+.navigation h3 a.products-link {
+  border: 2px solid black; 
+  color: black; 
 }
 
 .product-gallery {
