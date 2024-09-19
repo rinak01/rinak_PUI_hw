@@ -18,6 +18,11 @@
 #logo_bun_bun {
   width: 170px;
 }
+h3 {
+  text-align: center;
+  margin-top: 20px; 
+  font-size: 24px;  
+  color: #333;   
 
 .navigation ul {
   display: flex;
@@ -65,8 +70,3 @@
   font-size: 16px;
 }
 
-h3 {
-  text-align: center;
-  margin-top: 20px; 
-  font-size: 24px;  
-  color: #333;   
