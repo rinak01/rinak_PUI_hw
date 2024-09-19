@@ -43,8 +43,12 @@
 }
 
 .navigation h3 a:hover {
-  color: #f5a623;
-  text-decoration: underline;
+  background-color: yellow
+  padding: 5px 10px;
+  border-radius: 5px; 
+  border: 2px solid black;
+  color: black;
+  font-weight: bold
 }
 
 .product-gallery {
