@@ -1,130 +1,16 @@
-/* Header styling */
-.header {
+.product-layout {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
-  width: 100%; 
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+.details-div {
+  flex: 1;
 }
 
-#logo_bun_bun {
-  width: 380px;
+.div-300 {
+  flex: 1;
 }
 
-.navigation {
-  display: flex;
-  align-items: center;
-}
 
-.navigation h3 {
-  margin-left: 20px; 
-  font-size: 18px;
-  text-transform: uppercase;
-}
-
-.navigation h3 a {
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-}
-
-.navigation h3 a:hover {
-  background-color: yellow; 
-  padding: 5px 10px; 
-  border-radius: 5px; 
-  color: black;
-  font-weight: bold;
-}
-
-.navigation h3 a.cart-link {
-  background-color: yellow;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.navigation h3 a.products-link {
-  background-color: yellow;
-  padding: 5px 10px; 
-  border-radius: 5px; 
-  font-weight: bold;
-  border: 2px solid black; 
-  color: black;
-}
-
-.top-bar {
-  border: none; 
-  height: 4px; 
-  top: 150px;
-  right: 0;
-  left: auto;
-  background-color: black; 
-  width: 110%; 
-  margin: 5; 
-  max-width: 900px; 
-  position: absolute;
-
-}
-.product-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
-  width: 100%; 
-  max-width: 1200px; 
-  margin: 20px auto;
-}
-
-.product {
-  text-align: center;
-  font-size: 16px;
-}
-
-.product img {
-  width: 100%; 
-  max-width: 285px; 
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-.product:hover {
-  border: 2px solid yellow; 
-  background-color: yellow;
-}
-
-.product-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
-  width: 100%; 
-  max-width: 1200px; 
-  margin: 20px auto;
-}
-
-.product img {
-  width: 100%; 
-  max-width: 285px; 
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-.product {
-  text-align: center;
-  font-size: 16px;
-}
-h3 {
-  text-align: center;
-  margin-top: 20px; 
-  font-size: 24px;  
-  color: #333;  
-}
