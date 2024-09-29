@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnamon Roll Product Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <header>
+        <h1>Bun Bun Cinnamon Rolls</h1>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <h2>Original Cinnamon Roll</h2>
+            <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" width="600" height="600">
+
+            <!-- Dropdown for Glazing Options -->
+            <label for="glazingOptions">Choose Glazing:</label>
+            <select id="glazingOptions" onchange="glazingChange(this)">
+                <!-- Glazing options will be added via JavaScript -->
+            </select>
+
+            <!-- Dropdown for Pack Size Options -->
+            <label for="packSize">Choose Pack Size:</label>
+            <select id="packSize" onchange="packChange(this)">
+                <!-- Pack size options will be added via JavaScript -->
+            </select>
+
+            <!-- Display the Current Price -->
+            <p>Price: <span id="price">$2.49</span></p>
+        </section>
+    </main>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/price.js"></script>
+
+
+</body>
+</html>
