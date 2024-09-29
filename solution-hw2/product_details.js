@@ -1,49 +1,73 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Get URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const product = urlParams.get('product');
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const product = urlParams.get('product');
-  
+// Define product details (you can add more here as needed)
+const productData = {
+  "original": {
+    name: "Original Cinnamon Roll",
+    price: "$2.49",
+    imageSrc: "../assets/products/original-cinnamon-roll.jpg",
+  },
+  "apple": {
+    name: "Apple Cinnamon Roll",
+    price: "$3.49",
+    imageSrc: "../assets/products/apple-cinnamon-roll.jpg",
+  },
+  "raisin": {
+    name: "Raisin Cinnamon Roll",
+    price: "$2.99",
+    imageSrc: "../assets/products/raisin-cinnamon-roll.jpg",
+  },
+  "walnut": {
+    name: "Walnut Cinnamon Roll",
+    price: "$3.49",
+    imageSrc: "../assets/products/walnut-cinnamon-roll.jpg",
+  },
+  "double-chocolate": {
+    name: "Double-Chocolate Cinnamon Roll",
+    price: "$3.99",
+    imageSrc: "../assets/products/double-chocolate-cinnamon-roll.jpg",
+  },
+  "strawberry": {
+    name: "Strawberry Cinnamon Roll",
+    price: "$3.99",
+    imageSrc: "../assets/products/strawberry-cinnamon-roll.jpg",
+  }
+};
 
-    const products = {
-      "original-cinnamon-roll": {
-        name: "Original Cinnamon Roll",
-        price: "2.49",
-        imageSrc: "../assets/products/original-cinnamon-roll.jpg"
-      },
-      "apple-cinnamon-roll": {
-        name: "Apple Cinnamon Roll",
-        price: "3.49",
-        imageSrc: "../assets/products/apple-cinnamon-roll.jpg"
-      },
-      "raisin-cinnamon roll": {
-        name: "Raisin Cinnamon Roll",
-        price: "2.99",
-        imageSrc: "../assets/products/raisin-cinnamon-roll.jpg"
-      },
-      "walnut-cinnamon roll": {
-        name: "Walnut Cinnamon Roll",
-        price: "3.49",
-        imageSrc: "../assets/products/walnut-cinnamon-roll.jpg"
-    },
-    "double-chocolate-cinnamon-roll": {
-      name: "Double Chocolate Cinnamon Roll",
-      price: "3.99",
-      imageSrc: "../assets/products/double-chocolate-cinnamon-roll.jpg"
-    },
-    "strawberry-cinnamon-roll": {
-      name: "Strawberry Cinnamon Roll",
-      price: "3.99",
-      imageSrc: "../assets/products/strawberry-cinnamon-roll.jpg"
-    };
+// Check if the product exists in the data and update the page
+if (productData[product]) {
+  document.querySelector("h3").textContent = productData[product].name;
+  document.querySelector(".details-div img").src = productData[product].imageSrc;
+  document.querySelector(".div-300 p").textContent = productData[product].price;
+} else {
+  // Fallback if no product is found
+  document.querySelector("h3").textContent = "Product Not Found";
+}
 
-    if (products[product]) {
+// Get URL parameters
+const URLSearchParams = new URLSearchParams(window.location.search);
+const product  = urlParams.get('product');
 
-      document.getElementById("product-name").textContent = products[product].name;
-      document.getElementById("product-price").innerHTML = `$${products[product].price} <button>Add to cart</button>`;
-      document.getElementById("product-image").src = products[product].imageSrc;
-    } else {
+// Define product details
+const productData = {
+  "apple": {
+    name: "Apple Cinnamon Roll",
+    price: "$3.49",
+    imageSrc: "../assets/products/apple-cinnamon-roll.jpg"
+  },
+  "original": {
+    name: "Original Cinnamon Roll",
+    price: "$2.49",
+    imageSrc: "../assets/products/original-cinnamon-roll.jpg"
+  },
+  // Add more products here
+};
 
-      document.getElementById("product-name").textContent = "Product not found";
-    }
-  });
-  
+// Update the page based on the selected product
+if (productData[product]) {
+  document.querySelector("h3").textContent = productData[product].name;
+  document.querySelector(".details-div img").src = productData[product].imageSrc;
+  document.querySelector(".div-300 p").textContent = productData[product].price;
+}
