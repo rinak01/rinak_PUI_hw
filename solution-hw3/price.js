@@ -14,6 +14,7 @@ const packSizeOptions = {
 
 const basePrice = 2.49;
 
+// Populate glazing options
 const glazingDropdown = document.getElementById("glazingOptions");
 for (let glazing in glazingOptions) {
     let option = document.createElement("option");
@@ -22,7 +23,7 @@ for (let glazing in glazingOptions) {
     glazingDropdown.add(option);
 }
 
-
+// Populate pack size options
 const packSizeDropdown = document.getElementById("packSizeOptions");
 for (let size in packSizeOptions) {
     let option = document.createElement("option");
@@ -30,24 +31,23 @@ for (let size in packSizeOptions) {
     option.value = packSizeOptions[size]; 
     packSizeDropdown.add(option);
 }
-
-
+// Global variables to store the selected options
 let selectedGlazingPrice = 0;
 let selectedPackSize = 1;
 
-
+// Function to handle glazing change
 function glazingChange(element) {
     selectedGlazingPrice = parseFloat(element.value);
     updatePrice();
 }
 
-
+// Function to handle pack size change
 function packSizeChange(element) {
     selectedPackSize = parseFloat(element.value);
     updatePrice();
 }
 
-
+// Function to compute and update the price
 function updatePrice() {
     const totalPrice = (basePrice + selectedGlazingPrice) * selectedPackSize;
     document.getElementById("totalPrice").innerText = `Price: $${totalPrice.toFixed(2)}`;

@@ -6,4 +6,5 @@ select {
 #totalPrice {
     font-size: 18px;
     font-weight: bold;
+    color: red;
 }
