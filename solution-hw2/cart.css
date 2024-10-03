@@ -1,0 +1,13 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .cart-image {
+    width: 100px;
+    height: 100px;
+  }
+  .cart-details {
+    text-align: left;
+  }
+  

@@ -1,0 +1,12 @@
+.product-details {
+    display: flex;
+    gap: 20px;
+  }
+  .product-image {
+    width: 600px;
+    height: 600px;
+  }
+  .details {
+    max-width: 400px;
+  }
+  
