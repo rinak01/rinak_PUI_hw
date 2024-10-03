@@ -1,0 +1,71 @@
+
+
+img {
+    padding: 0px;
+}
+
+div img {
+    margin-bottom: 0px; 
+    border: 3px solid black;
+}
+
+div p {
+    margin-top: 0px; 
+    margin-bottom: 0; 
+}
+
+.div-300 {  
+    padding: 15px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.details-div {  
+    padding: 15px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+h3{
+    text-align: center;
+}
+
+hr {
+    height: 4px;
+    background-color: black;
+}
+
+a :hover {  
+    background-color: yellow;
+    font-weight: bold;
+}
+
+a {
+    color: black;
+}
+
+<header>
+    <div class="logo">Bun Bun Bake Shop</div>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+header {
+    display: flex;
+    justify-content: space-between
+    align-items: center;
+    padding: 10x;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navigation a {
+    margin-left: 20px;
+    text-decoration: none;
+}
