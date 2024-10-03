@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinnamon Roll Product Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
-    
-</head>
-<body>
+    <title>Bun Bun Bake Shop</title>
+    <link rel="stylesheet" href="products_gallery.css">
+  </head>
+  <body>
+
     <header>
-        <h1>Bun Bun Cinnamon Rolls</h1>
+    <img src="/../assets/logo/logo-01.svg" width="400" alt="logo of Bun Bun Bake Shop"/>
+      <nav class="navigation">
+        <a href="#" class="active">PRODUCTS</a>
+        <a href="#">CART</a>
+      </nav>
     </header>
 
-    <main>
-        <section class="product-details">
-            <h2>Original Cinnamon Roll</h2>
-            <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" width="600" height="600">
+    <hr class="header-bar">
 
-            <!-- Dropdown for Glazing Options -->
-            <label for="glazingOptions">Choose Glazing:</label>
-            <select id="glazingOptions" onchange="glazingChange(this)">
-                <!-- Glazing options will be added via JavaScript -->
-            </select>
+  <body>
+    
+    <hr>
 
-            <!-- Dropdown for Pack Size Options -->
-            <label for="packSize">Choose Pack Size:</label>
-            <select id="packSize" onchange="packChange(this)">
-                <!-- Pack size options will be added via JavaScript -->
-            </select>
+    <h3>Original Cinnamon Roll</h3>
+    
+  
+    <div class="details-div">
+      <img src="../assets/products/original-cinnamon-roll.jpg" width="600" alt="logo of Bun Bun Bake Shop"/>  
+    </div>
 
-            <!-- Display the Current Price -->
-            <p>Price: <span id="price">$2.49</span></p>
-        </section>
-    </main>
+    <div class="div-300">
+      <p> Customize our delicious, hand-made cinnamon roll to your liking!</p>
+      <p> Glazing:</p>
+      <select name="glazing" id="glazing">
+        <option value="original">Keep Original</option>
+        <option value="sugar-milk">Sugar Milk</option>
+        <option value="vanilla-milk">Vanilla Milk</option>
+        <option value="double-chocolate">Double Chocolate</option>
+      </select>
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="js/price.js"></script>
+      <p>Pack Size</p>
+      <select name="pack-size" id="pack-size">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="12">12</option>
+      </select>
+      <p> $2.49 <button>Add to cart</button></p>
+    </div>
 
 
-</body>
+
+  </body>
 </html>

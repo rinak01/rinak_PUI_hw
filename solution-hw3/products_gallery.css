@@ -1,16 +1,75 @@
-.product-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: none;
+}
+
+header img {
+  width: 150px;
+}
+
+.navigation {
+  display: flex;
   gap: 20px;
 }
 
-.product {
-  text-align: center;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.navigation a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333; 
+  font-weight: bold;
 }
 
-.product img {
-  border-radius: 8px;
+.navigation a:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.header-bar {
+  border: none; 
+  height: 4px; 
+  background-color: black; 
+  margin: 5px 0; 
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px;
+  margin-top: 10px 0;
+}
+
+.product-gallery .div-300 {
+  background-color: #f5f5f5;
+  padding: 5px;
+  text-align: center;
+}
+
+.product-gallery .div-300 img {
+  width: 100%; 
+  height: auto; 
+}
+
+.product-gallery .div-300 p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.product-gallery .div-300:hover {
+  background-color: #ffff50;
+  border: 1px solid #ffff50;
+}
+
+.product-gallery .div-300:hover p {
+  color: black;
+  font-weight: bold;
 }
