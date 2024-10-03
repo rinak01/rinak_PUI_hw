@@ -11,8 +11,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
 }
 
 .logo {
@@ -23,12 +22,20 @@ header {
 .navigation a {
   margin-left: 20px;
   text-decoration: none;
-  color: #333;
+  color: #333; 
+  font-weight: bold;
 }
 
 .navigation a:hover {
   color: #ffff50;
   text-decoration: underline;
+}
+
+.header-bar {
+  border: none; 
+  height: 4px; 
+  background-color: black; 
+  margin: 0; 
 }
 
 
