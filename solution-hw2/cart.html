@@ -2,63 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <title>Shopping Cart</title>
   <link rel="stylesheet" href="cart.css">
 </head>
- 
-  <body>
-    <img src="../assets/logo/logo-01.svg" width="400" alt="logo of Bun Bun Bake Shop"/>
-    <hr>
-    <div>
-      <h3><a>PRODUCTS</a></h3>
-      <h3><a>CART</a></h3>
+
+<body>
+
+    <header>
+      <img src="../assets/logo/logo-01.svg" width="150" alt="logo of Bun Bun Bake Shop"/>
+      <nav class="navigation">
+        <a href="#">PRODUCTS</a>
+        <a href="#" class="active">CART</a>
+      </nav>
+    </header>
+
+
+    <hr class="header-bar">
+
+    <h3>Our hand-made cinnamon rolls</h3>
+
+
+    <div class="cart-item">
+      <img src="../assets/products/original-cinnamon-roll.jpg" width="150" alt="Original Cinnamon Roll">
+      <div class="cart-details">
+        <p>Original Cinnamon Roll</p>
+        <p>Glazing: Keep original</p>
+        <p>Pack Size: 1</p>
+        <p>$2.49</p>
+        <a href="#" class="remove-item">Remove</a>
+      </div>
     </div>
-    <h3>Shopping Cart</h3>
-    <div class = "div-300">
-      <img src="../assets/products/original-cinnamon-roll.jpg" width="150" alt="logo of Bun Bun Bake Shop"/> 
+
+    <div class="cart-item">
+      <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" width="150" alt="Double Chocolate Cinnamon Roll">
+      <div class="cart-details">
+        <p>Double Chocolate Cinnamon Roll</p>
+        <p>Glazing: Sugar Milk</p>
+        <p>Pack Size: 6</p>
+        <p>$27.45</p>
+        <a href="#" class="remove-item">Remove</a>
+      </div>
     </div>
     
-    <div class="div-300">
-      <p> Customize our delicious, hand-made cinnamon roll to your liking!</p>
-      <p> Glazing: Keep original</p>
-      <p>Pack Size: 1</p>
-      <br>
-      <p> $2.49 </p>
- 
+    <hr class="total-divider">
+    <div class="cart-total">
+      <p>Total:</p>
+      <p>$29.94</p>
     </div>
 
- 
-      </div>
-      <div class = "div-300">
-        <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" width="150" alt="logo of Bun Bun Bake Shop"/> 
-      </div>
-      
-      <div class="div-300">
-        <p> Customize our delicious, hand-made cinnamon roll to your liking!</p>
-        <p> Glazing:Sugar milk</p>
-        <p>Pack Size: 6</p>
-        <br>
-        <p> $27.45 </p>
-        <br>
-     
-        <hr>
+    <button class="checkout-btn">Checkout</button>
 
-        <br>
-        <p> Total: $29.94 </p>
-        <br>
-        <button>Checkout</button>
-
-      </div>
-  
-  </body>
+</body>
 </html>
-<link rel="stylesheet" href="style.css">
-
-<div class="cart-item">
-  <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll" class="cart-image">
-  <div class="cart-details">
-    <h3>Cinnamon Roll</h3>
-    <p>Quantity: 1</p>
-    <p>Price: $2.49</p>
-  </div>
-</div>
