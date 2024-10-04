@@ -52,3 +52,17 @@ function updatePrice() {
     const totalPrice = (basePrice + selectedGlazingPrice) * selectedPackSize;
     document.getElementById("totalPrice").innerText = `Price: $${totalPrice.toFixed(2)}`;
 }
+
+// Function to add items to the cart
+function addToCart(productName, glazing, packSize, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const newItem = {
+        productName: productName,
+        glazing: glazing,
+        packSize: packSize,
+        price: price,
+    };
+    cart.push(newItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Item added to cart!');
+}
