@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> 
+  <head>
     <meta charset="UTF-8">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="product_detail.css">
+    <title>Bun Bun Bake Shop</title>
+    <link rel="stylesheet" href="products_gallery.css">
   </head>
+  <body>
+
+    <header>
+    <img src="/../assets/logo/logo-01.svg" width="400" alt="logo of Bun Bun Bake Shop"/>
+      <nav class="navigation">
+        <a href="#" class="active">PRODUCTS</a>
+        <a href="#">CART</a>
+      </nav>
+    </header>
+
+    <hr class="header-bar">
 
   <body>
-    <img src="/../assets/logo/logo-01.svg" width="400" alt="logo of Bun Bun Bake Shop"/>
-    <hr>
-    <div>
-      <h3><a>PRODUCTS</a></h3>
-      <h3><a>CART</a></h3>
-    </div>
-    <h3>Original Cinnamon Roll</h3>
     
+    <hr>
+
+    <h3 id="roll">Original Cinnamon Roll</h3>
+  
     <div class="details-div">
-      <img src="../assets/products/original-cinnamon-roll.jpg" width="600" alt="logo of Bun Bun Bake Shop"/>  
+      <img id="roll-img" src="../assets/products/original-cinnamon-roll.jpg" width="600" alt="logo of Bun Bun Bake Shop"/>  
     </div>
 
     <div class="div-300">
@@ -30,14 +38,24 @@
       </select>
 
       <p>Pack Size</p>
+     
       <select name="pack-size" id="pack-size">
         <option value="1">1</option>
         <option value="3">3</option>
         <option value="6">6</option>
         <option value="12">12</option>
       </select>
-      <p> $2.49 <button>Add to cart</button></p>
+      <p> $2.49 
     </div>
 
   </body>
 </html>
+
+</select>
+
+<button onclick="addToCart('Original Cinnamon Roll', 'Keep original', 1, 2.49)">Add to Cart</button>
+
+<script src="../solution-hw4/price.js"></script>
+
+<script src="../solution-hw4/rollsData.js"></script>
+

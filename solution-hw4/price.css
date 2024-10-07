@@ -1,0 +1,10 @@
+select {
+    padding: 5px;
+    margin: 10px;
+}
+
+#totalPrice {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
