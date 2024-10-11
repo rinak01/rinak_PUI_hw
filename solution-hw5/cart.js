@@ -6,7 +6,6 @@ class Roll {
       this.basePrice = rollPrice;
       this.image = imagePath;
   
-      // Glazing prices mapping
       this.glazingPrices = {
         "Sugar Milk": 0.50,
         "Vanilla Milk": 0.75,
@@ -15,28 +14,36 @@ class Roll {
       };
     }
   
-    // Method to calculate the total price based on glazing and pack size
     calculatePrice() {
       const glazingPrice = this.glazingPrices[this.glazing];
       return (this.basePrice + glazingPrice) * this.size;
     }
-  }  
-        
-  const cart = [
+  }
+  
+  let cart = JSON.parse(localStorage.getItem('cart')) || [
     new Roll("Original", "Sugar Milk", 1, 2.49, "../assets/products/original-cinnamon-roll.jpg"),
     new Roll("Walnut", "Vanilla Milk", 12, 3.99, "../assets/products/walnut-cinnamon-roll.jpg"),
     new Roll("Raisin", "Sugar Milk", 3, 2.99, "../assets/products/raisin-cinnamon-roll.jpg"),
     new Roll("Apple", "Original", 3, 3.49, "../assets/products/apple-cinnamon-roll.jpg")
-  ];  
+  ];
   
- 
+
+  function saveCartToLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+  
+
   function updateTotalPrice() {
     let totalPrice = 0;
     for (const roll of cart) {
       totalPrice += roll.calculatePrice();
     }
+    if (cart.length === 0) {
+      totalPrice = 0;
+    }
     document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
   }
+  
 
   function displayCartItems() {
     const cartItemsContainer = document.getElementById('cart-items');
@@ -46,11 +53,10 @@ class Roll {
       cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
     } else {
       cart.forEach((roll, index) => {
-        // Create a container for the cart item
+
         const rollDiv = document.createElement('div');
         rollDiv.className = 'cart-item';
   
-        // Add the roll information, including the image
         rollDiv.innerHTML = `
           <img src="${roll.image}" alt="${roll.type}" width="150" height="auto">
           <div class="cart-details">
@@ -66,15 +72,16 @@ class Roll {
       });
     }
   
-
-    updateTotalPrice();
+    updateTotalPrice(); 
   }
 
 
   function removeFromCart(index) {
     cart.splice(index, 1); 
+    saveCartToLocalStorage(); 
     displayCartItems(); 
   }
   
+
   window.onload = displayCartItems;
   
