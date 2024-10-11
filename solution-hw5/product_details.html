@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,44 +9,49 @@
 
     <header>
       <img src="../assets/logo/logo-01.svg" width="400" alt="logo of Bun Bun Bake Shop"/>
-        <nav class="navigation">
-          <a href="#" class="active">PRODUCTS</a>
-          <a href="cart.html">CART</a>
-        </nav>
-      </header>
-
+      <nav class="navigation">
+        <a href="products_gallery.html" class="active">PRODUCTS</a>
+        <a href="cart.html">CART</a>
+      </nav>
+    </header>
 
     <hr class="header-bar">
 
-    <h3 id="roll"> Original Cinnamon Roll</h3>
+    <h3 id="roll">Original Cinnamon Roll</h3>
 
     <div class="details-div">
-      <img id="roll-img" src="../assets/products/original-cinnamon-roll.jpg" width="600" alt="Original Cinnamon Roll"/>  
+      <img id="roll-img" src="../assets/products/original-cinnamon-roll.jpg" width="600" alt="Original Cinnamon Roll"/>
     </div>
 
     <div class="div-300">
       <p>Customize our delicious, hand-made cinnamon roll to your liking!</p>
-    
 
-      <label for="glazingOptions">Glazing:</label>
-      <select name="glazing" id="glazingOptions">
-      
+      <!-- Glazing Options -->
+      <label for="glazingOptions">Choose Glazing:</label>
+      <select name="glazing" id="glazingOptions" onchange="updatePrice()">
+        <option value="0">Keep original</option>
+        <option value="0.5">Sugar Milk</option>
+        <option value="0.75">Vanilla Milk</option>
+        <option value="1">Double Chocolate</option>
       </select>
 
-
+      <!-- Pack Size Options -->
       <p>Pack Size:</p>
-      <select name="packSize" id="packSizeOptions">
-     
+      <select name="packSize" id="packSizeOptions" onchange="updatePrice()">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="12">12</option>
       </select>
 
-    
-      <p id="totalPrice">Price: $0.00</p>
+      <!-- Display the total price -->
+      <p id="totalPrice">Price: $2.49</p>
 
-
+      <!-- Add to Cart Button -->
       <button onclick="addToCart('Original Cinnamon Roll')">Add to Cart</button>
     </div>
 
-
+    <!-- Link to JavaScript file -->
     <script src="price.js"></script>
 
   </body>

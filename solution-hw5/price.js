@@ -14,118 +14,33 @@ const packSizeOptions = {
 
 const basePrice = 2.49;
 
-const glazingDropdown = document.getElementById("glazingOptions");
-for (let glazing in glazingOptions) {
-    let option = document.createElement("option");
-    option.text = glazing;
-    option.value = glazingOptions[glazing]; 
-    glazingDropdown.add(option);
-}
 
-const packSizeDropdown = document.getElementById("packSizeOptions");
-for (let size in packSizeOptions) {
-    let option = document.createElement("option");
-    option.text = size;
-    option.value = packSizeOptions[size]; 
-    packSizeDropdown.add(option);
-}
-
-let selectedGlazingPrice = 0;
-let selectedPackSize = 1;
-
-
-function glazingChange(element) {
-    selectedGlazingPrice = parseFloat(element.value);
-    updatePrice(); 
-}
-
-function packSizeChange(element) {
-    selectedPackSize = parseFloat(element.value);
-    updatePrice(); 
-}
-
-// Function to compute and update the total price dynamically
 function updatePrice() {
-    const totalPrice = (basePrice + selectedGlazingPrice) * selectedPackSize;
-    document.getElementById("totalPrice").innerText = `Price: $${totalPrice.toFixed(2)}`;
-}
+  const glazingPrice = parseFloat(document.getElementById('glazing').value);
+  const packSize = parseInt(document.getElementById('packSize').value);
 
-class Roll {
-  constructor(rollType, rollGlazing, packSize, rollPrice) {
-    this.type = rollType;
-    this.glazing = rollGlazing;
-    this.size = packSize;
-    this.basePrice = rollPrice;
-  }
-
-  calculatePrice() {
-    return (this.basePrice + glazingOptions[this.glazing]) * packSizeOptions[this.size];
-  }
-}
-
-function addToCart(productName) {
-    const glazing = glazingDropdown.options[glazingDropdown.selectedIndex].text;
-    const packSize = packSizeDropdown.options[packSizeDropdown.selectedIndex].text;
-    const price = (basePrice + selectedGlazingPrice) * selectedPackSize; 
-
-    const newRoll = new Roll(productName, glazing, packSize, basePrice);
-
-
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(newRoll);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Item added to cart!');
+  const totalPrice = (basePrice + glazingPrice) * packSize;
+  document.getElementById('total-price').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
 }
 
 
-function displayCartItems() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartItemsContainer.innerHTML = ''; 
+function addToCart() {
+  const glazing = document.getElementById('glazing').value;
+  const packSize = document.getElementById('packSize').value;
 
-    cart.forEach((roll, index) => {
-        const rollDiv = document.createElement('div');
-        rollDiv.className = 'cart-item';
-        rollDiv.innerHTML = `
-            <img src="../assets/products/${roll.type.toLowerCase()}-cinnamon-roll.jpg" alt="${roll.type}" width="150">
-            <div>
-                <p>Type: ${roll.type}</p>
-                <p>Glazing: ${roll.glazing}</p>
-                <p>Pack Size: ${roll.size}</p>
-                <p>Price: $${roll.calculatePrice().toFixed(2)}</p>
-                <button onclick="removeFromCart(${index})">Remove</button>
-            </div>
-        `;
-        cartItemsContainer.appendChild(rollDiv);
-    });
-    updateTotalPrice(); 
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const newRoll = {
+    type: 'Original Cinnamon Roll',
+    glazing: glazing,
+    size: packSize,
+    basePrice: basePrice,
+    price: parseFloat(document.getElementById('total-price').textContent.replace('Total Price: $', '')),
+    image: '../assets/products/original-cinnamon-roll.jpg'
+  };
+
+  cart.push(newRoll);
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  alert('Item added to cart!');
 }
-
-
-function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.splice(index, 1); 
-    localStorage.setItem('cart', JSON.stringify(cart)); 
-    displayCartItems(); 
-}
-
-
-function updateTotalPrice() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let totalPrice = 0;
-
-    cart.forEach(roll => {
-        totalPrice += roll.calculatePrice(); 
-    });
-
-    document.getElementById('total-price').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
-}
-
-
-glazingDropdown.addEventListener('change', function() {
-    glazingChange(this);
-});
-
-packSizeDropdown.addEventListener('change', function() {
-    packSizeChange(this);
-});

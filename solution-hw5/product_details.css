@@ -1,3 +1,14 @@
+.navigation a {
+  text-decoration: none; 
+  color: black; 
+  font-weight: bold; 
+  margin-right: 20px; 
+}
+
+.navigation a:hover {
+  color: purple; 
+}
+
 .product-details {
     display: flex;
     gap: 20px;
