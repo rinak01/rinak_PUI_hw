@@ -66,7 +66,7 @@ class Roll {
 function addToCart(productName) {
     const glazing = glazingDropdown.options[glazingDropdown.selectedIndex].text;
     const packSize = packSizeDropdown.options[packSizeDropdown.selectedIndex].text;
-    const price = (basePrice + selectedGlazingPrice) * selectedPackSize; // Calculate the price
+    const price = (basePrice + selectedGlazingPrice) * selectedPackSize; 
 
     const newRoll = new Roll(productName, glazing, packSize, basePrice);
 
