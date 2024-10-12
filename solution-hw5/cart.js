@@ -4,13 +4,14 @@ class Roll {
     this.glazing = rollGlazing;
     this.size = packSize;
     this.basePrice = rollPrice;
+    this.imagePath = imagePath; 
 
 
     this.glazingPrices = {
       "Sugar Milk": 0.50,
       "Vanilla Milk": 0.75,
       "Double Chocolate": 1.00,
-      "Keep original": 0
+      "Keep Original": 0.00
     };
   }
 
@@ -24,7 +25,7 @@ let cart = [
   new Roll("Original", "Sugar Milk", 1, 2.49, "../assets/products/original-cinnamon-roll.jpg"),
   new Roll("Walnut", "Vanilla Milk", 12, 3.99, "../assets/products/walnut-cinnamon-roll.jpg"),
   new Roll("Raisin", "Sugar Milk", 3, 2.99, "../assets/products/raisin-cinnamon-roll.jpg"),
-  new Roll("Apple", "Original", 3, 3.49, "../assets/products/apple-cinnamon-roll.jpg")
+  new Roll("Apple", "Keep Original", 3, 3.49, "../assets/products/apple-cinnamon-roll.jpg")
 ];
 
 function updateTotalPrice() {
@@ -49,13 +50,15 @@ function displayCartItems() {
 
 
       rollDiv.innerHTML = `
-        <img src="${roll.image}" alt="${roll.type}" width="150" height="auto">
+        <img src="${roll.imagePath}" alt="${roll.type}" width="150" height="auto">
+      
         <div class="cart-details">
           <p>Type: ${roll.type}</p>
           <p>Glazing: ${roll.glazing}</p>
           <p>Pack Size: ${roll.size}</p>
           <p>Price: $${roll.calculatePrice().toFixed(2)}</p>
-          <button onclick="removeFromCart(${index})">Remove</button>
+
+          <button onclick="removeFromCart(${index})">Remove </button>
         </div>
       `;
 
@@ -66,10 +69,13 @@ function displayCartItems() {
   updateTotalPrice();
 }
 
+
 function removeFromCart(index) {
+  console.log("removed from cart")
   cart.splice(index, 1);
   
   displayCartItems();
+
 }
 
 window.onload = displayCartItems;

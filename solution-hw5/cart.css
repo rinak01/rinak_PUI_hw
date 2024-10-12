@@ -27,10 +27,10 @@ header img {
   background-color: yellow;
 }
 
-/* Cart container */
+
 .cart-container {
   max-width: 800px;
-  margin: 0 auto; /* Center the container */
+  margin: 0 auto; 
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -39,7 +39,7 @@ header img {
 
 /* Cart item layout */
 .cart-item {
-  display: flex; /* Align items horizontally */
+  display: flex; 
   padding: 20px 0;
   border-bottom: 1px solid #ccc;
   width: 100%;
@@ -48,7 +48,7 @@ header img {
 .cart-item img {
   max-width: 150px;
   height: auto;
-  margin-right: 20px; /* Add space between image and details */
+  margin-right: 20px; 
 }
 
 .cart-details {
@@ -63,3 +63,15 @@ header img {
 }
 
 <button onclick="removeFromCart(0)">Remove</button>
+
+button.remove-item {
+  padding: 1px 5px;   
+  font-size: 14px;    
+  border: 1px solid #ccc; 
+  background-color: white; 
+  cursor: pointer;   
+}
+
+button.remove-item:hover {
+  background-color: #f0f0f0; 
+}
