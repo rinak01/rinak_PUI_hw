@@ -1,103 +1,75 @@
 class Roll {
-    constructor(rollType, rollGlazing, packSize, rollPrice, imagePath) {
-      this.type = rollType;
-      this.glazing = rollGlazing;
-      this.size = packSize;
-      this.basePrice = rollPrice;
-      this.image = imagePath;
-  
+  constructor(rollType, rollGlazing, packSize, rollPrice, imagePath) {
+    this.type = rollType;
+    this.glazing = rollGlazing;
+    this.size = packSize;
+    this.basePrice = rollPrice;
 
-      this.glazingPrices = {
-        "Sugar Milk": 0.50,
-        "Vanilla Milk": 0.75,
-        "Double Chocolate": 1.00,
-        "Keep original": 0
-      };
-    }
-  
 
-    calculatePrice() {
-      const glazingPrice = this.glazingPrices[this.glazing] || 0;
-      return (this.basePrice + glazingPrice) * this.size;
-    }
+    this.glazingPrices = {
+      "Sugar Milk": 0.50,
+      "Vanilla Milk": 0.75,
+      "Double Chocolate": 1.00,
+      "Keep original": 0
+    };
   }
-  
 
-  let cart = (JSON.parse(localStorage.getItem('cart')) || []).map(item => 
-    new Roll(item.type, item.glazing, item.size, item.basePrice, item.image)
-  );
-  
-
-  function saveCartToLocalStorage() {
-    localStorage.setItem('cart', JSON.stringify(cart));
+  calculatePrice() {
+    const glazingPrice = this.glazingPrices[this.glazing];
+    return (this.basePrice + glazingPrice) * this.size;
   }
-  
+}
 
-  function updateTotalPrice() {
-    let totalPrice = 0;
-    for (const roll of cart) {
-      totalPrice += roll.calculatePrice();
-    }
-    document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+let cart = [
+  new Roll("Original", "Sugar Milk", 1, 2.49, "../assets/products/original-cinnamon-roll.jpg"),
+  new Roll("Walnut", "Vanilla Milk", 12, 3.99, "../assets/products/walnut-cinnamon-roll.jpg"),
+  new Roll("Raisin", "Sugar Milk", 3, 2.99, "../assets/products/raisin-cinnamon-roll.jpg"),
+  new Roll("Apple", "Original", 3, 3.49, "../assets/products/apple-cinnamon-roll.jpg")
+];
+
+function updateTotalPrice() {
+  let totalPrice = 0;
+  for (const roll of cart) {
+    totalPrice += roll.calculatePrice();
   }
-  
-  function displayCartItems() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = ''; 
-    
-    if (cart.length === 0) {
-      cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
-    } else {
-      cart.forEach((roll, index) => {
-        const rollDiv = document.createElement('div');
-        rollDiv.className = 'cart-item';
-        
-        rollDiv.innerHTML = `
-          <img src="${roll.image}" alt="${roll.type}" width="150" height="auto">
-          <div class="cart-details">
-            <p>Type: ${roll.type}</p>
-            <p>Glazing: ${roll.glazing}</p>
-            <label for="packSize-${index}">Pack Size: </label>
-            <select id="packSize-${index}" data-index="${index}">
-              <option value="1" ${roll.size == 1 ? "selected" : ""}>1</option>
-              <option value="3" ${roll.size == 3 ? "selected" : ""}>3</option>
-              <option value="6" ${roll.size == 6 ? "selected" : ""}>6</option>
-              <option value="12" ${roll.size == 12 ? "selected" : ""}>12</option>
-            </select>
-            <p>Price: $<span id="price-${index}">${roll.calculatePrice().toFixed(2)}</span></p>
-            <button class="remove-item" data-index="${index}">Remove</button>
-          </div>
-        `;
-    
-        cartItemsContainer.appendChild(rollDiv);
-      });
-    }
-  
-    document.querySelectorAll('.remove-item').forEach(button => {
-      button.addEventListener('click', (event) => {
-        const id = event.target.getAttribute('data-id');
-        removeFromCart(id);
-      });
+  document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+}
+
+function displayCartItems() {
+  const cartItemsContainer = document.getElementById('cart-items');
+  cartItemsContainer.innerHTML = '';
+
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
+  } else {
+    cart.forEach((roll, index) => {
+
+      const rollDiv = document.createElement('div');
+      rollDiv.className = 'cart-item';
+
+
+      rollDiv.innerHTML = `
+        <img src="${roll.image}" alt="${roll.type}" width="150" height="auto">
+        <div class="cart-details">
+          <p>Type: ${roll.type}</p>
+          <p>Glazing: ${roll.glazing}</p>
+          <p>Pack Size: ${roll.size}</p>
+          <p>Price: $${roll.calculatePrice().toFixed(2)}</p>
+          <button onclick="removeFromCart(${index})">Remove</button>
+        </div>
+      `;
+
+      cartItemsContainer.appendChild(rollDiv);
     });
-  
+  }
 
-    document.querySelectorAll('select[id^="packSize-"]').forEach(select => {
-      select.addEventListener('change', (event) => {
-        const index = event.target.getAttribute('data-index');
-        updateCartItemPackSize(index, event.target.value);
-      });
-    });
+  updateTotalPrice();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
   
-    updateTotalPrice(); 
-  }
-  function removeFromCart(id) {
-    const index = cart.findIndex(roll => roll.id == id);
-    if (index !== -1) {
-      cart.splice(index, 1);
-      
-      saveCartToLocalStorage();
-  
-      displayCartItems();
-    }
-  }
-  
+  displayCartItems();
+}
+
+window.onload = displayCartItems;
