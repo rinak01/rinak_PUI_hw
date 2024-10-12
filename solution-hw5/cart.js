@@ -41,11 +41,10 @@ class Roll {
     document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
   }
   
-
   function displayCartItems() {
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.innerHTML = ''; 
-  
+    
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = '<p>Your cart is empty</p>';
     } else {
@@ -69,12 +68,12 @@ class Roll {
             <button class="remove-item" data-index="${index}">Remove</button>
           </div>
         `;
-  
+    
         cartItemsContainer.appendChild(rollDiv);
       });
     }
   
-
+    // Add event listeners to "Remove" buttons
     document.querySelectorAll('.remove-item').forEach(button => {
       button.addEventListener('click', (event) => {
         const index = event.target.getAttribute('data-index');
@@ -82,7 +81,7 @@ class Roll {
       });
     });
   
-
+    // Add event listeners to pack size selectors
     document.querySelectorAll('select[id^="packSize-"]').forEach(select => {
       select.addEventListener('change', (event) => {
         const index = event.target.getAttribute('data-index');
@@ -93,20 +92,14 @@ class Roll {
     updateTotalPrice(); 
   }
   
-
-  function updateCartItemPackSize(index, newSize) {
-    cart[index].size = parseInt(newSize); // Update pack size
-    document.getElementById(`price-${index}`).textContent = cart[index].calculatePrice().toFixed(2); // Update price for this item
-    saveCartToLocalStorage(); // Save the updated cart
-    updateTotalPrice(); // Update the total price
-  }
-  
-
   function removeFromCart(index) {
+    // Remove the item from the cart
     cart.splice(index, 1);
-    saveCartToLocalStorage(); 
+  
+    // Save the updated cart to localStorage
+    saveCartToLocalStorage();
+  
+    // Redisplay the cart with the updated indices
     displayCartItems(); 
   }
-  
-  window.onload = displayCartItems;
   

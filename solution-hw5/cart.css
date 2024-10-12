@@ -1,3 +1,42 @@
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+header img {
+  width: 200px; 
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navigation a:hover {
+  color: black;
+  background-color: yellow;
+}
+
+/* Cart container */
+.cart-container {
+  max-width: 800px;
+  margin: 0 auto; /* Center the container */
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Cart item layout */
 .cart-item {
   display: flex; /* Align items horizontally */
@@ -23,14 +62,4 @@
   margin: 5px 0;
 }
 
-/* Remove button */
-.remove-item {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 10px;
-}
+<button onclick="removeFromCart(0)">Remove</button>
