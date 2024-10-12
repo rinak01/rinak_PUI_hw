@@ -73,15 +73,14 @@ class Roll {
       });
     }
   
-    // Add event listeners to "Remove" buttons
     document.querySelectorAll('.remove-item').forEach(button => {
       button.addEventListener('click', (event) => {
-        const index = event.target.getAttribute('data-index');
-        removeFromCart(index);
+        const id = event.target.getAttribute('data-id');
+        removeFromCart(id);
       });
     });
   
-    // Add event listeners to pack size selectors
+
     document.querySelectorAll('select[id^="packSize-"]').forEach(select => {
       select.addEventListener('change', (event) => {
         const index = event.target.getAttribute('data-index');
@@ -91,15 +90,14 @@ class Roll {
   
     updateTotalPrice(); 
   }
+  function removeFromCart(id) {
+    const index = cart.findIndex(roll => roll.id == id);
+    if (index !== -1) {
+      cart.splice(index, 1);
+      
+      saveCartToLocalStorage();
   
-  function removeFromCart(index) {
-    // Remove the item from the cart
-    cart.splice(index, 1);
-  
-    // Save the updated cart to localStorage
-    saveCartToLocalStorage();
-  
-    // Redisplay the cart with the updated indices
-    displayCartItems(); 
+      displayCartItems();
+    }
   }
   
