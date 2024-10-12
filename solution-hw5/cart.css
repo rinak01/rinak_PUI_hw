@@ -1,68 +1,22 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: none;
-}
-
-header img {
-  width: 150px;
-}
-
-.navigation {
-  display: flex;
-  gap: 20px;
-}
-
-.navigation a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333; 
-  font-weight: bold;
-}
-
-.navigation a:hover {
-  background-color: yellow;
-  color: black;
-}
-
-.header-bar {
-  border: none; 
-  height: 4px; 
-  background-color: black; 
-  margin: 5px 0; 
-}
-
-  padding: 20px;
-  max-width: 800px; 
-  margin: 0 auto;
-
 /* Cart item layout */
 .cart-item {
-  display: flex;
-  flex-direction: column; 
-  align-items: flex-start;
+  display: flex; /* Align items horizontally */
   padding: 20px 0;
   border-bottom: 1px solid #ccc;
+  width: 100%;
 }
 
-/* Cart item image */
 .cart-item img {
   max-width: 150px;
   height: auto;
-  margin-bottom: 10px;
+  margin-right: 20px; /* Add space between image and details */
 }
 
-/* Cart details */
 .cart-details {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cart-details p {
@@ -71,7 +25,7 @@ header img {
 
 /* Remove button */
 .remove-item {
-  background-color: red;
+  background-color: black;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -79,29 +33,4 @@ header img {
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 10px;
-}
-
-.remove-item:hover {
-  background-color: darkred;
-}
-
-/* Total price section */
-#total-price {
-  font-weight: bold;
-  font-size: 20px;
-  padding: 20px 0;
-}
-
-#checkout-btn {
-  background-color: #ffcc00;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  display: block;
-  margin: 20px auto;
-}
-
-#checkout-btn:hover {
-  background-color: #ffbb00;
 }

@@ -14,33 +14,42 @@ const packSizeOptions = {
 
 const basePrice = 2.49;
 
-
 function updatePrice() {
-  const glazingPrice = parseFloat(document.getElementById('glazing').value);
-  const packSize = parseInt(document.getElementById('packSize').value);
+    const glazingPrice = parseFloat(document.getElementById('glazingOptions').value);
+    const packSize = parseInt(document.getElementById('packSizeOptions').value);
+  
+    // Calculate the total price
+    const totalPrice = (basePrice + glazingPrice) * packSize;
+  
+    // Update the price in the HTML
+    document.getElementById('totalPrice').textContent = `Price: $${totalPrice.toFixed(2)}`;
+  }
+  
+  // Function to add the item to the cart
+  function addToCart(rollType) {
+    const glazing = document.getElementById('glazingOptions').value;
+    const packSize = document.getElementById('packSizeOptions').value;
+    const price = parseFloat(document.getElementById('totalPrice').textContent.replace('Price: $', ''));
+  
+    // Retrieve the existing cart from localStorage (or create a new cart if empty)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
 
-  const totalPrice = (basePrice + glazingPrice) * packSize;
-  document.getElementById('total-price').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
-}
+    const newRoll = {
+      type: rollType,
+      glazing: glazing,
+      size: packSize,
+      basePrice: basePrice,
+      price: price,
+      image: '../assets/products/original-cinnamon-roll.jpg' 
+    };
+  
 
+    cart.push(newRoll);
+  
 
-function addToCart() {
-  const glazing = document.getElementById('glazing').value;
-  const packSize = document.getElementById('packSize').value;
+    localStorage.setItem('cart', JSON.stringify(cart));
+  
 
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  const newRoll = {
-    type: 'Original Cinnamon Roll',
-    glazing: glazing,
-    size: packSize,
-    basePrice: basePrice,
-    price: parseFloat(document.getElementById('total-price').textContent.replace('Total Price: $', '')),
-    image: '../assets/products/original-cinnamon-roll.jpg'
-  };
-
-  cart.push(newRoll);
-  localStorage.setItem('cart', JSON.stringify(cart));
-
-  alert('Item added to cart!');
-}
+    alert('Item added to cart!');
+  }

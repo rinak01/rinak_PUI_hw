@@ -6,7 +6,7 @@ class Roll {
       this.basePrice = rollPrice;
       this.image = imagePath;
   
-      // Glazing price mapping
+
       this.glazingPrices = {
         "Sugar Milk": 0.50,
         "Vanilla Milk": 0.75,
@@ -15,24 +15,24 @@ class Roll {
       };
     }
   
-    // Method to calculate the total price based on glazing and pack size
+
     calculatePrice() {
-      const glazingPrice = this.glazingPrices[this.glazing] || 0; // Handle invalid glazing gracefully
+      const glazingPrice = this.glazingPrices[this.glazing] || 0;
       return (this.basePrice + glazingPrice) * this.size;
     }
   }
   
-  // Load the cart from localStorage and ensure we create Roll instances
+
   let cart = (JSON.parse(localStorage.getItem('cart')) || []).map(item => 
     new Roll(item.type, item.glazing, item.size, item.basePrice, item.image)
   );
   
-  // Save the cart to localStorage
+
   function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }
   
-  // Update the total price in the cart
+
   function updateTotalPrice() {
     let totalPrice = 0;
     for (const roll of cart) {
@@ -41,7 +41,7 @@ class Roll {
     document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
   }
   
-  // Function to display cart items in the UI
+
   function displayCartItems() {
     const cartItemsContainer = document.getElementById('cart-items');
     cartItemsContainer.innerHTML = ''; 
@@ -74,7 +74,7 @@ class Roll {
       });
     }
   
-    // Attach event listeners for removing items
+
     document.querySelectorAll('.remove-item').forEach(button => {
       button.addEventListener('click', (event) => {
         const index = event.target.getAttribute('data-index');
@@ -82,7 +82,7 @@ class Roll {
       });
     });
   
-    // Attach event listeners for changing pack size
+
     document.querySelectorAll('select[id^="packSize-"]').forEach(select => {
       select.addEventListener('change', (event) => {
         const index = event.target.getAttribute('data-index');
@@ -90,10 +90,10 @@ class Roll {
       });
     });
   
-    updateTotalPrice(); // Update total price after rendering
+    updateTotalPrice(); 
   }
   
-  // Function to update pack size in cart and re-calculate price
+
   function updateCartItemPackSize(index, newSize) {
     cart[index].size = parseInt(newSize); // Update pack size
     document.getElementById(`price-${index}`).textContent = cart[index].calculatePrice().toFixed(2); // Update price for this item
@@ -101,13 +101,12 @@ class Roll {
     updateTotalPrice(); // Update the total price
   }
   
-  // Remove item from the cart
+
   function removeFromCart(index) {
-    cart.splice(index, 1); // Remove item from cart array
-    saveCartToLocalStorage(); // Save updated cart to localStorage
-    displayCartItems(); // Re-render cart
+    cart.splice(index, 1);
+    saveCartToLocalStorage(); 
+    displayCartItems(); 
   }
   
-  // Display the cart when the page loads
   window.onload = displayCartItems;
   

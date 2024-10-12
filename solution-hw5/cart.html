@@ -2,46 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Product Details</title>
-  <link rel="stylesheet" href="product_details.css">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
 
   <header>
-    <img src="../assets/logo/logo-01.svg" width="150" alt="logo of Bun Bun Bake Shop"/>
+    <img src="../assets/logo/logo-01.svg" width="400" alt="logo of Bun Bun Bake Shop"/>
     <nav class="navigation">
       <a href="#" class="active">PRODUCTS</a>
-      <a href="cart.html">CART</a>
+      <a href="#">CART</a>
     </nav>
   </header>
 
-  <div class="product-details">
-    <img src="../assets/products/original-cinnamon-roll.jpg" alt="Cinnamon Roll" width="300">
-    <h2>Original Cinnamon Roll</h2>
-    <p>Price: $2.49</p>
+  <h1>Your Cart</h1>
 
-    <label for="glazing">Choose Glazing:</label>
-    <select id="glazing">
-      <option value="0">Keep original</option>
-      <option value="0.5">Sugar Milk</option>
-      <option value="0.75">Vanilla Milk</option>
-      <option value="1">Double Chocolate</option>
-    </select>
+  <div id="cart-items">
 
-    <label for="packSize">Choose Pack Size:</label>
-    <select id="packSize">
-      <option value="1">1</option>
-      <option value="3">3</option>
-      <option value="6">6</option>
-      <option value="12">12</option>
-    </select>
+    <div class="cart-item">
+      <img src="../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll">
+      <div class="cart-details">
+        <p>Type: Original</p>
+        <p>Glazing: Sugar Milk</p>
+        <p>Pack Size: 1</p>
+        <p>Price: $2.99</p>
+        <button class="remove-item">Remove</button>
+      </div>
+    </div>
+  
 
-    <button onclick="addToCart()">Add to Cart</button>
+    <div class="cart-item">
+      <img src="../assets/products/walnut-cinnamon-roll.jpg" alt="Walnut Cinnamon Roll">
+      <div class="cart-details">
+        <p>Type: Walnut</p>
+        <p>Glazing: Vanilla Milk</p>
+        <p>Pack Size: 12</p>
+        <p>Price: $56.88</p>
+        <button class="remove-item">Remove</button>
+      </div>
+    </div>
+  
 
-    <p id="total-price"></p> 
+    <div class="cart-item">
+      <img src="../assets/products/raisin-cinnamon-roll.jpg" alt="Raisin Cinnamon Roll">
+      <div class="cart-details">
+        <p>Type: Raisin</p>
+        <p>Glazing: Sugar Milk</p>
+        <p>Pack Size: 3</p>
+        <p>Price: $10.47</p>
+        <button class="remove-item">Remove</button>
+      </div>
+    </div>
+  
+    <div class="cart-item">
+      <img src="../assets/products/apple-cinnamon-roll.jpg" alt="Apple Cinnamon Roll">
+      <div class="cart-details">
+        <p>Type: Apple</p>
+        <p>Glazing: Original</p>
+        <p>Pack Size: 3</p>
+        <p>Price: $10.47</p> 
+        <button class="remove-item">Remove</button>
+      </div>
+    </div>
   </div>
 
-  <script src="price.js"></script> 
 
+  <div class="cart-total flex">
+    <p id="total-price">Total Price: $x</p>
+  </div>
+
+  <script src="cart.js"></script>
 </body>
 </html>
