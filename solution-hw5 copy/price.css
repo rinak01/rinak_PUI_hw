@@ -1,0 +1,82 @@
+/* General styling for the product details */
+.product-details {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 15px; /* Add space between elements */
+    padding: 20px;
+    margin-bottom: 20px; /* Space below the product details section */
+  }
+  
+  .product-details h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .product-details p {
+    font-size: 18px;
+    margin: 5px 0; /* Spacing between paragraphs */
+  }
+  
+  /* Styling for the dropdowns (glazing and pack size) */
+  .product-details select {
+    width: 150px;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 15px; /* Space below the dropdown */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Label styling */
+  .product-details label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Add to cart button styling */
+  .product-details button {
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Space above the button */
+  }
+  
+  .product-details button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+  }
+  
+  /* Total price display */
+  #total-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  /* Responsive design: Ensure layout works well on smaller screens */
+  @media (max-width: 600px) {
+    .product-details {
+      align-items: center; /* Center items on smaller screens */
+    }
+  
+    .product-details select {
+      width: 100%; /* Full-width dropdowns on mobile */
+    }
+  
+    .product-details button {
+      width: 100%; /* Full-width button on mobile */
+    }
+  
+    #total-price {
+      text-align: center;
+    }
+  }
+  

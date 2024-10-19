@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Bake Shop</title>
+    <link rel="stylesheet" href="products_gallery.css">
+  </head>
+  <body>
+
+    <header>
+      <img src="../assets/logo/logo-01.svg" width="400" alt="logo of Bun Bun Bake Shop"/>
+      <nav class="navigation">
+        <a href="products_gallery.html" class="active">PRODUCTS</a>
+        <a href="cart.html">CART</a>
+      </nav>
+    </header>
+
+    <hr class="header-bar">
+
+    <h3 id="roll">Original Cinnamon Roll</h3>
+
+    <div class="details-div">
+      <img id="roll-img" src="../assets/products/original-cinnamon-roll.jpg" width="600" alt="Original Cinnamon Roll"/>
+    </div>
+
+    <div class="div-300">
+      <p>Customize our delicious, hand-made cinnamon roll to your liking!</p>
+
+
+      <label for="glazingOptions">Choose Glazing:</label>
+      <select name="glazing" id="glazingOptions" onchange="updatePrice()">
+        <option value="0">Keep Original</option>
+        <option value="0.5">Sugar Milk</option>
+        <option value="0.75">Vanilla Milk</option>
+        <option value="1">Double Chocolate</option>
+      </select>
+
+
+      <p>Pack Size:</p>
+      <select name="packSize" id="packSizeOptions" onchange="updatePrice()">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="12">12</option>
+      </select>
+
+
+      <p id="totalPrice">Price: $2.49</p>
+
+
+      <button onclick="addToCart('Original Cinnamon Roll')">Add to Cart</button>
+
+
+      <p id="cartFeedback" style="color:green; display:none;">Item added to cart!</p> <!-- Hidden initially -->
+    </div>
+
+    <script src="rollsData.js"></script>
+    <script src="price.js"></script>
+    <script src="product_details.js"></script>
+
+  </body>
+</html>
