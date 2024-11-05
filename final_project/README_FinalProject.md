@@ -22,7 +22,7 @@ My first prototype design features a chat-based interaction within an open ocean
 ### *Prototype 2*
 ![Prototype Design #2](images/HighFi_Prototype_Design#2_01.jpg)
 
-![Prototype Design #2](images/HighFi_Prototype_Design#2_02.jpg)
+![Prototype Design #2](images/HighFi_Prototype_Design#2_02.jpg) 
 
 My sedond prototype design features an action-based interaction within an environment resembling a view through a submarine window. Users can select specific actions, like asking for the weather, waving, or having the jellyfish follow their movements. The weather is displayed graphically, showing forecasts for the next few days. Additionally, the jellyfish follows the cursor when the user moves in a certain way, enhancing the sense of playful engagement. This design focuses on creating a more immersive experience, allowing users to interact with the jellyfish in a structured, visual, and engaging way.
 …
