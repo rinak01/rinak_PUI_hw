@@ -13,15 +13,15 @@ This project, titled "My Personal Jellyfish," is a website designed to feature a
 ### *Prototype 1*
 
 ![Prototype Design #1](images/HighFi_Prototype_Design#1_01.jpg) 
-![Prototype Design #1](images/HighFi_Prototype_Design#1_02.jpg) 
 
-A brief description and summary of the user feedback (\<100 words, 2 images) 
+![Prototype Design #1](images/HighFi_Prototype_Design#1_02.jpg) 
 
 My first prototype design features a chat-based interaction within an open ocean environment. Users can initiate conversations with the jellyfish, asking questions like “How was your day?” or requesting weather updates. The jellyfish responds with relevant information, such as upcoming weather for a specified location. This design focuses on creating a conversational, engaging experience that allows users to explore and interact with the jellyfish in a playful, immersive setting.
 
 
 ### *Prototype 2*
 ![Prototype Design #2](images/HighFi_Prototype_Design#2_01.jpg)
+
 ![Prototype Design #2](images/HighFi_Prototype_Design#2_02.jpg)
 
 My sedond prototype design features an action-based interaction within an environment resembling a view through a submarine window. Users can select specific actions, like asking for the weather, waving, or having the jellyfish follow their movements. The weather is displayed graphically, showing forecasts for the next few days. Additionally, the jellyfish follows the cursor when the user moves in a certain way, enhancing the sense of playful engagement. This design focuses on creating a more immersive experience, allowing users to interact with the jellyfish in a structured, visual, and engaging way.
@@ -39,7 +39,7 @@ In response, I implemented several revisions based on this feedback. I developed
 
 Show screenshots of your updated design based on the user feedback (\<100 words, \~2 images).
 
-![title for prototype1](images/PUI_HighFi_Prototype_After_Feedback.jpg)
+![Updated Designs](images/PUI_HighFi_Prototype_After_Feedback.jpg)
 
 I updated the project by adding dynamic elements based on the time of day. The background now changes color and light intensity, reflecting different times, such as morning, afternoon, and night. Additionally, the number of fish passing by varies each hour, adding a sense of cuteness and interactivity. These updates create a more immersive and engaging underwater experience, making the jellyfish environment feel lively and responsive to real-time changes. 
 
