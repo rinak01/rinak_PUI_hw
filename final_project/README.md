@@ -1,5 +1,5 @@
 
-# **FP2 \- Evaluation of the Final project**
+# **FP2 Evaluation of the Final project**
 
 ## Project Description
 
