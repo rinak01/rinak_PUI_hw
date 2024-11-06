@@ -12,17 +12,17 @@ This project, titled "My Personal Jellyfish," is a website designed to feature a
 
 ### *Prototype 1*
 
-![Prototype Design #1](images/HighFi_Prototype_Design#1_01.jpg) 
+![Prototype Design #1](images/HighFi_Prototype_Design1_01.jpg) 
 
-![Prototype Design #1](images/HighFi_Prototype_Design#1_02.jpg) 
+![Prototype Design #1](images/HighFi_Prototype_Design1_02.jpg) 
 
 My first prototype design features a chat-based interaction within an open ocean environment. Users can initiate conversations with the jellyfish, asking questions like “How was your day?” or requesting weather updates. The jellyfish responds with relevant information, such as upcoming weather for a specified location. This design focuses on creating a conversational, engaging experience that allows users to explore and interact with the jellyfish in a playful, immersive setting.
 
 
 ### *Prototype 2*
-![Prototype Design #2](images/HighFi_Prototype_Design#2_01.jpg)
+![Prototype Design #2](images/HighFi_Prototype_Design2_01.jpg)
 
-![Prototype Design #2](images/HighFi_Prototype_Design#2_02.jpg) 
+![Prototype Design #2](images/HighFi_Prototype_Design2_02.jpg) 
 
 My sedond prototype design features an action-based interaction within an environment resembling a view through a submarine window. Users can select specific actions, like asking for the weather, waving, or having the jellyfish follow their movements. The weather is displayed graphically, showing forecasts for the next few days. Additionally, the jellyfish follows the cursor when the user moves in a certain way, enhancing the sense of playful engagement. This design focuses on creating a more immersive experience, allowing users to interact with the jellyfish in a structured, visual, and engaging way.
 …
