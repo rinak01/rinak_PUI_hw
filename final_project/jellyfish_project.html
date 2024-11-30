@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../final_project/p5.js"></script>
+    <title>p5.js Clock and Chatbot</title>
+    <link rel="stylesheet" href="../final_project/jellyfish_project.css">
+
+<body>
+    <!-- Clock Container -->
+    <script src="../final_project/clock.js"></script>
+    <div id="clock-container"></div>
+
+    <!-- Jellyfish Image -->
+    <div class="jellyfish-container">
+        <img src="../final_project/images/jellyfish.png" alt="jellyfish" class="foreground-image" width="800" height="400">
+        <!-- eyes Container -->
+        <script src="../final_project/eyes.js"></script>
+        <div id="eyes-container"></div>    
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send Message To Jellyfish</button>
+        </div>
+    </div>
+
+    
+    <script src="../final_project/chat.js"></script>
+    
+
+</body>
+
+</html>

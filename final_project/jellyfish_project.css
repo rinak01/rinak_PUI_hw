@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../final_project/images/underwater_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#clock-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 0;
+}
+
+
+.foreground-image {
+    position: absolute;
+    z-index: -5;
+}
+
+.eyes-container {
+    position: absolute;
+    z-index : 1;
+}
+
+.chat-container {
+    width: 30%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+.chat-messages p {
+    margin: 0.5em 0;
+}
+
+.user {
+    text-align: right;
+    color: #333;
+}
+
+.bot {
+    text-align: left;
+    color: #0078D7;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    font-size: 16px;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    background: #0078D7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chat-input button:hover {
+    background: #005BBB;
+}
+
+.jellyfish-container {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make the container fill the viewport height */
+    width: 100vw; /* Make the container fill the viewport width */
+    position: relative;
+}
