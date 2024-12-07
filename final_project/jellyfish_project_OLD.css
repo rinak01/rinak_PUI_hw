@@ -106,6 +106,5 @@
     transform: translateY(-50%);
     width: 300px;
     height: 300px;
-    /* ... other properties remain the same ... */
     z-index: 2;
   }

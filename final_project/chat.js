@@ -1,6 +1,5 @@
-
 // Chatbot Script
-const apiKey = "enter-key-here";
+const apiKey = "gpt_key_here";
 const model = "gpt-4o-mini";
 
 async function sendMessage() {
@@ -49,3 +48,11 @@ function displayMessage(message, sender) {
     chatMessages.appendChild(messageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
+
+// Add event listener for "Enter" key
+document.getElementById("user-input").addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) { 
+        event.preventDefault(); 
+        sendMessage(); 
+    }
+});
