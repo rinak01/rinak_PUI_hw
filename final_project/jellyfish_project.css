@@ -137,7 +137,7 @@ body {
 
 #welcomeBubble button {
     background-color: #e3ffdc;
-    color: rgb(1, 89, 7);
+    color: rgb(2, 75, 27);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -146,7 +146,7 @@ body {
 }
 
 #welcomeBubble button:hover {
-    background-color: #9c1760;
+    background-color: #fdffa1;
 }
 
 .visually-hidden {
