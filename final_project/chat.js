@@ -1,5 +1,5 @@
 // Chatbot Script
-const apiKey = "gpt_key_here";
+const apiKey = "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";
 const model = "gpt-4o-mini";
 
 async function sendMessage() {
