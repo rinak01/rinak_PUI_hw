@@ -42,12 +42,46 @@ async function sendMessage() {
 
 function displayMessage(message, sender) {
     const chatMessages = document.getElementById("chat-messages");
+
+    // Create the new message element
     const messageElement = document.createElement("p");
     messageElement.className = sender;
     messageElement.textContent = message;
+
+    // Append the message to the chat container
     chatMessages.appendChild(messageElement);
+
+    // Scroll to the bottom of the chat
     chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Manage visibility for small screens
+    manageMobileMessages();
 }
+
+// Function to manage visibility on small screens
+function manageMobileMessages() {
+    const chatMessages = document.getElementById("chat-messages");
+    const messages = chatMessages.querySelectorAll("p");
+
+    if (window.innerWidth <= 768) {
+        // Keep only the last message visible
+        messages.forEach((msg, index) => {
+            if (index !== messages.length - 1) {
+                msg.style.display = "none";
+            } else {
+                msg.style.display = "block";
+            }
+        });
+    } else {
+        // Ensure all messages are visible on larger screens
+        messages.forEach((msg) => {
+            msg.style.display = "block";
+        });
+    }
+}
+
+// Listen for window resize to dynamically adjust message visibility
+window.addEventListener("resize", manageMobileMessages);
 
 // Add event listener for "Enter" key
 document.getElementById("user-input").addEventListener("keydown", function (event) {
