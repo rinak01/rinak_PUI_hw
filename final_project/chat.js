@@ -1,10 +1,25 @@
-// Chatbot Script
-const apiKey = "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";
+let apiKey = null; 
 const model = "gpt-4o-mini";
+let sendButton;
 
 async function sendMessage() {
     const userInput = document.getElementById("user-input").value.trim();
     if (!userInput) return;
+
+    if (!apiKey) {
+        apiKey = userInput; 
+        document.getElementById("user-input").value = "";
+
+        const isValid = await validateApiKey(apiKey);
+        if (isValid) {
+            displayMessage("API key is valid! Chat with me! :D ", "bot");  
+            sendButton.textContent = "Send Message To Jellyfish"; 
+        } else {
+            displayMessage("Invalid API key. That's not my API key! :( .", "bot");
+            apiKey = null; 
+        }
+        return;
+    }
 
     displayMessage(userInput, "user");
     document.getElementById("user-input").value = "";
@@ -40,31 +55,46 @@ async function sendMessage() {
     }
 }
 
+async function validateApiKey(key) {
+    try {
+        const response = await fetch("https://api.openai.com/v1/models", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${key}`
+            }
+        });
+        return response.ok; 
+    } catch (error) {
+        console.error("Error validating API key:", error);
+        return false;
+    }
+}
+
 function displayMessage(message, sender) {
     const chatMessages = document.getElementById("chat-messages");
 
-    // Create the new message element
+
     const messageElement = document.createElement("p");
     messageElement.className = sender;
     messageElement.textContent = message;
 
-    // Append the message to the chat container
+
     chatMessages.appendChild(messageElement);
 
-    // Scroll to the bottom of the chat
+
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    // Manage visibility for small screens
+
     manageMobileMessages();
 }
 
-// Function to manage visibility on small screens
+
 function manageMobileMessages() {
     const chatMessages = document.getElementById("chat-messages");
     const messages = chatMessages.querySelectorAll("p");
 
     if (window.innerWidth <= 768) {
-        // Keep only the last message visible
+
         messages.forEach((msg, index) => {
             if (index !== messages.length - 1) {
                 msg.style.display = "none";
@@ -73,20 +103,27 @@ function manageMobileMessages() {
             }
         });
     } else {
-        // Ensure all messages are visible on larger screens
+
         messages.forEach((msg) => {
             msg.style.display = "block";
         });
     }
 }
 
-// Listen for window resize to dynamically adjust message visibility
+
 window.addEventListener("resize", manageMobileMessages);
 
-// Add event listener for "Enter" key
+
 document.getElementById("user-input").addEventListener("keydown", function (event) {
     if (event.key === "Enter" && !event.shiftKey) { 
         event.preventDefault(); 
         sendMessage(); 
     }
 });
+
+window.onload = function () {
+    sendButton = document.querySelector(".chat-input button");
+    sendButton.textContent = "Enter API Key"; 
+    displayMessage("Please enter your OpenAI API key to start chatting with the jellyfish.", "bot");
+};
+
